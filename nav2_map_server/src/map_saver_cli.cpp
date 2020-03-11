@@ -41,31 +41,31 @@ int main(int argc, char ** argv)
     } else if (*it == "-f") {
       if (++it == arguments.end()) {
         RCLCPP_WARN(logger, "Argument ignored: -f should be followed by a value.");
-        continue;
+        break;
       }
       params_from_args.emplace_back("output_file_no_ext", *it);
     } else if (*it == "--occ") {
       if (++it == arguments.end()) {
         RCLCPP_WARN(logger, "Argument ignored: --occ should be followed by a value.");
-        continue;
+        break;
       }
       params_from_args.emplace_back("threshold_occupied", atoi(it->c_str()));
     } else if (*it == "--free") {
       if (++it == arguments.end()) {
         RCLCPP_WARN(logger, "Argument ignored: --free should be followed by a value.");
-        continue;
+        break;
       }
       params_from_args.emplace_back("threshold_free", atoi(it->c_str()));
     } else if (*it == "--mode") {
       if (++it == arguments.end()) {
         RCLCPP_WARN(logger, "Argument ignored: --mode should be followed by a value.");
-        continue;
+        break;
       }
       params_from_args.emplace_back("map_mode", *it);
     } else if (*it == "--fmt") {
       if (++it == arguments.end()) {
         RCLCPP_WARN(logger, "Argument ignored: --fmt should be followed by a value.");
-        continue;
+        break;
       }
       params_from_args.emplace_back("image_format", *it);
     } else {
